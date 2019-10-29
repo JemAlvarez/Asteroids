@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float force = 5f;
+    [SerializeField] int damage = 50;
 
-    Rigidbody2D rb;
-
-    // Start is called before the first frame update
-    void Start()
+    public int GetDamage()
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return damage;
     }
 }

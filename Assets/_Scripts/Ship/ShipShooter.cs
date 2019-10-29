@@ -7,6 +7,7 @@ public class ShipShooter : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
 
     [SerializeField] float fireRate = 1f;
+    [SerializeField] float shootingForce = 200f;
 
     Coroutine shootingCoroutine;
 
@@ -33,7 +34,7 @@ public class ShipShooter : MonoBehaviour
     void Shoot()
     {
         var bullet = Instantiate(bulletPrefab, transform.position, transform.parent.rotation) as GameObject;
-        bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * 200f);
+        bullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * shootingForce);
     }
 
     IEnumerator ContinuousShooting()
